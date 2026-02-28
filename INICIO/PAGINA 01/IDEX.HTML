@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embarazo sin Esperas | Tu Camino al Positivo</title>
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1249751813198503');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1249751813198503&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --brand-primary: #ff4d94;
+            --brand-secondary: #8a2b6d;
+            --brand-dark: #4a153b;
+            --brand-accent: #ccff00;
+        }
+
+        body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; color: #2d3748; overflow-x: hidden; }
+        .cursive-font { font-family: 'Dancing Script', cursive; }
+
+        .urgency-bar {
+            background: linear-gradient(90deg, #ff0000, #8a2b6d, #ff0000);
+            background-size: 200% 100%;
+            animation: gradient-move 5s linear infinite;
+            color: white; text-align: center; padding: 10px; font-weight: 900;
+            position: sticky; top: 0; z-index: 100; text-transform: uppercase;
+            letter-spacing: 0.5px; font-size: 0.65rem;
+        }
+        @keyframes gradient-move { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.55)), url('https://i.postimg.cc/43RQk7V4/R69BN094PCauvzpy_BYTpt_min.png');
+            background-size: cover; background-position: center;
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #ff4d94 0%, #ff1a75 50%, #8a2b6d 100%);
+            box-shadow: 0 10px 25px -5px rgba(255, 26, 117, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+            animation: pulse-glow 2s infinite;
+            touch-action: manipulation;
+        }
+        .btn-premium:hover { transform: translateY(-3px) scale(1.02); }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 26, 117, 0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(255, 26, 117, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 26, 117, 0); }
+        }
+
+        .phase-card {
+            background: white; border-radius: 20px; padding: 1.25rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04); border-left: 6px solid var(--brand-primary);
+            transition: all 0.3s ease;
+        }
+
+        #sales-notification {
+            position: fixed; bottom: 15px; left: 15px; right: 15px; background: white;
+            padding: 10px 14px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex; align-items: center; gap: 10px; z-index: 1000;
+            transform: translateY(200%); transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #f0f0f0;
+            max-width: 340px;
+            margin: 0 auto;
+        }
+        #sales-notification.show { transform: translateY(0); }
+        @media (min-width: 768px) {
+            #sales-notification { bottom: 20px; left: 20px; right: auto; transform: translateX(-150%); }
+            #sales-notification.show { transform: translateX(0); }
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #f0f0f0;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .faq-button {
+            width: 100%;
+            text-align: left;
+            padding: 18px 20px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .faq-content {
+            padding: 0 20px 20px 20px;
+            color: #4a5568;
+            line-height: 1.5;
+            font-size: 0.85rem;
+            background: #fffafa;
+        }
+
+        .title-badge {
+            background: linear-gradient(to right, #fff5f7, #fdf2f8);
+            border: 1.5px solid #fbcfe8;
+            color: #8a2b6d;
+            padding: 8px 18px;
+            border-radius: 9999px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bonus-card-premium {
+            background: white;
+            border: 2px solid #fce7f3;
+            border-radius: 24px;
+            padding: 2rem 1.25rem;
+            position: relative;
+        }
+        .badge-gratis-flash {
+            background: #ccff00;
+            color: black;
+            font-weight: 900;
+            padding: 4px 16px;
+            border-radius: 99px;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.65rem;
+            letter-spacing: 0.5px;
+            animation: heart-beat 1.5s infinite;
+        }
+        @keyframes heart-beat {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+
+        .offer-gradient-box {
+            background: white;
+            border-radius: 30px;
+        }
+        
+        /* Ajuste para textos muy largos en móviles pequeños */
+        @media (max-width: 360px) {
+            .hero-h1 { font-size: 1.875rem !important; }
+            .price-huge { font-size: 90px !important; }
+        }
+
+        details summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- NOTIFICACIÓN DE VENTAS -->
+    <div id="sales-notification">
+        <div class="relative flex-shrink-0">
+            <img id="sale-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" class="w-10 h-10 rounded-full object-cover border-2 border-pink-200" alt="Usuario">
+            <div class="absolute -bottom-1 -right-1 bg-green-500 w-3 h-3 rounded-full border-2 border-white"></div>
+        </div>
+        <div class="flex-1">
+            <p class="text-[11px] font-bold text-gray-900 leading-tight" id="sale-user">Cargando...</p>
+            <p class="text-[10px] text-gray-500 font-medium" id="sale-action">Adquirió el programa</p>
+            <p class="text-[9px] text-pink-500 font-bold uppercase tracking-tighter mt-0.5">Verificado por Hotmart</p>
+        </div>
+    </div>
+
+    <!-- BARRA DE URGENCIA -->
+    <div class="urgency-bar">
+        ⚡ ¡SOLO HOY! 85% DCTO DISPONIBLE: <span id="countdown">04:59:59</span>
+    </div>
+
+    <!-- SECCIÓN HERO (OPTIMIZADA MÓVIL) -->
+    <section class="hero-bg min-h-[85vh] md:min-h-[90vh] flex items-center px-4 py-12 md:px-6">
+        <div class="max-w-6xl mx-auto w-full text-center">
+            <div class="flex flex-col items-center">
+                <img src="https://i.postimg.cc/g2ZHTqw4/LOGO_(2)_min.png" alt="Logo" class="max-w-[120px] md:max-w-[150px] mb-6 md:mb-8">
+                <h1 class="hero-h1 text-white text-3xl md:text-6xl font-black uppercase mb-4 md:mb-6 leading-tight">
+                    ¿Cansada de esperar <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-pink-100 cursive-font normal-case italic block mt-1">el milagro?</span>
+                    Aprende a crearlo.
+                </h1>
+                <p class="text-white text-base md:text-xl mb-8 md:mb-10 max-w-2xl opacity-90 font-medium mx-auto px-2">
+                    Descubre el secreto natural para preparar tu cuerpo, equilibrar tus hormonas y <strong>lograr tu embarazo</strong> sin tratamientos costosos.
+                </p>
+                <a href="https://pay.hotmart.com/A104664724N?checkoutMode=10" target="_blank" class="btn-premium text-white px-6 py-4 md:px-10 md:py-5 rounded-full font-black text-lg md:text-2xl uppercase tracking-tighter shadow-2xl w-full max-w-xs md:max-w-none">
+                    SÍ, QUIERO MI POSITIVO
+                </a>
+                <p class="text-white/60 mt-6 text-[10px] md:text-xs font-bold uppercase tracking-widest italic">Acceso instantáneo • Un solo pago</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOLOR / EMPATÍA -->
+    <section class="py-16 md:py-20 px-4 md:px-6 bg-white border-b border-gray-100">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <img src="https://i.postimg.cc/25N7RbhQ/sx_Wtnq_FW5hb_Wp_TYU_Ki_(1)_min.png" class="rounded-2xl md:rounded-[30px] shadow-lg w-full" alt="Entendemos tu búsqueda">
+            </div>
+            <div class="space-y-5 md:space-y-6 order-1 md:order-2">
+                <h2 class="text-[#8a2b6d] text-2xl md:text-4xl font-black uppercase leading-tight">Sé lo que estás sintiendo...</h2>
+                <p class="text-base md:text-lg font-bold text-gray-700 italic border-l-4 border-pink-500 pl-4">"Otro mes más, otro test negativo y el silencio que duele."</p>
+                <p class="text-gray-600 text-sm md:text-lg leading-relaxed">
+                    Te han dicho que te relajes, pero ves pasar el tiempo y la ansiedad crece. No es tu culpa. Tu cuerpo solo necesita que <strong>limpies el camino</strong> para que la vida florezca. 
+                </p>
+                <div class="space-y-3 pt-2">
+                    <p class="flex items-center gap-3 font-bold text-gray-800 text-sm md:text-base"><i data-lucide="heart" class="text-pink-500 w-5 h-5 flex-shrink-0"></i> Recupera la confianza en ti.</p>
+                    <p class="flex items-center gap-3 font-bold text-gray-800 text-sm md:text-base"><i data-lucide="calendar" class="text-pink-500 w-5 h-5 flex-shrink-0"></i> Entiende tu ciclo natural.</p>
+                    <p class="flex items-center gap-3 font-bold text-gray-800 text-sm md:text-base"><i data-lucide="sparkles" class="text-pink-500 w-5 h-5 flex-shrink-0"></i> Prepara tu nido biológico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EL SISTEMA -->
+    <section class="py-16 md:py-20 px-4 md:px-6 bg-pink-50/30 text-center">
+        <div class="max-w-6xl mx-auto">
+            <div class="title-badge mx-auto mb-6">MÉTODO PROBADO</div>
+            <h2 class="text-[#4a153b] text-2xl md:text-5xl font-black uppercase mb-4 leading-tight">SISTEMA <br class="md:hidden"> FERTILIDAD 360</h2>
+            <p class="text-gray-600 font-semibold text-sm md:text-base mb-10 max-w-2xl mx-auto">Un plan integral diseñado para que tu biología trabaje a tu favor.</p>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 text-left">
+                <div class="w-full md:flex-1 space-y-4">
+                    <div class="phase-card">
+                        <h4 class="font-black text-[#8a2b6d] uppercase mb-1 text-sm md:text-base">FASE 1: PREPARACIÓN</h4>
+                        <p class="text-gray-600 text-[13px] md:text-sm leading-relaxed">Desintoxicación y equilibrio del pH uterino para recibir al espermatozoide.</p>
+                    </div>
+                    <div class="phase-card" style="border-left-color: #8a2b6d;">
+                        <h4 class="font-black text-[#8a2b6d] uppercase mb-1 text-sm md:text-base">FASE 2: SUPER-NUTRICIÓN</h4>
+                        <p class="text-gray-600 text-[13px] md:text-sm leading-relaxed">Alimentos que potencian la calidad del óvulo y preparan tu reserva ovárica.</p>
+                    </div>
+                    <div class="phase-card" style="border-left-color: #4a153b;">
+                        <h4 class="font-black text-[#8a2b6d] uppercase mb-1 text-sm md:text-base">FASE 3: ABRAZO DE VIDA</h4>
+                        <p class="text-gray-600 text-[13px] md:text-sm leading-relaxed">Preparamos tu útero para que sea el lugar acogedor para la implantación.</p>
+                    </div>
+                </div>
+                <div class="w-full md:flex-1 mt-4 md:mt-0">
+                    <img src="https://i.postimg.cc/HsKtzPL7/dd8d9bb0_min.png" class="max-w-[240px] md:max-w-md mx-auto drop-shadow-2xl" alt="Ebook">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BONOS (GRID MÓVIL) -->
+    <section class="py-16 md:py-24 px-4 md:px-6 bg-pink-50/50 relative overflow-hidden text-center">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-[#4a153b] text-2xl md:text-5xl font-black uppercase leading-tight mb-8">
+                MÁS QUE UN LIBRO, <br> <span class="text-pink-500 italic cursive-font normal-case text-4xl md:text-5xl block mt-2">Es tu kit de transformación</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mt-12">
+                <!-- Bono 1 -->
+                <div class="bonus-card-premium">
+                    <div class="badge-gratis-flash">¡GRATIS HOY!</div>
+                    <img src="https://i.postimg.cc/MKXDy8zK/1725e927_min.png" class="max-w-[140px] md:max-w-[180px] mx-auto mb-5" alt="Bono 1">
+                    <h4 class="font-black text-lg md:text-xl text-[#4a153b] uppercase mb-2">Recetario Fértil</h4>
+                    <p class="text-[13px] text-gray-500 mb-5 leading-relaxed">Cenas diseñadas para equilibrar tus hormonas naturalmente.</p>
+                    <div class="bg-gray-100 rounded-full py-1.5 px-4 inline-block font-bold">
+                        <span class="text-gray-400 line-through text-[11px]">$17 USD</span>
+                        <span class="text-pink-600 text-[13px] ml-2 font-black">GRATIS</span>
+                    </div>
+                </div>
+                <!-- Bono 2 -->
+                <div class="bonus-card-premium">
+                    <div class="badge-gratis-flash">¡GRATIS HOY!</div>
+                    <img src="https://i.postimg.cc/xTqRKS9C/2e4b035b_min.png" class="max-w-[140px] md:max-w-[180px] mx-auto mb-5" alt="Bono 2">
+                    <h4 class="font-black text-lg md:text-xl text-[#4a153b] uppercase mb-2">Pareja en Conexión</h4>
+                    <p class="text-[13px] text-gray-500 mb-5 leading-relaxed">Guía para reducir el estrés y fortalecer la unión en el proceso.</p>
+                    <div class="bg-gray-100 rounded-full py-1.5 px-4 inline-block font-bold">
+                        <span class="text-gray-400 line-through text-[11px]">$12 USD</span>
+                        <span class="text-pink-600 text-[13px] ml-2 font-black">GRATIS</span>
+                    </div>
+                </div>
+                <!-- Bono 3 -->
+                <div class="bonus-card-premium">
+                    <div class="badge-gratis-flash">¡GRATIS HOY!</div>
+                    <img src="https://i.postimg.cc/Gh9Qk1bc/42657926_min.png" class="max-w-[140px] md:max-w-[180px] mx-auto mb-5" alt="Bono 3">
+                    <h4 class="font-black text-lg md:text-xl text-[#4a153b] uppercase mb-2">Comunidad VIP</h4>
+                    <p class="text-[13px] text-gray-500 mb-5 leading-relaxed">Acceso a nuestro grupo exclusivo de apoyo y resolución.</p>
+                    <div class="bg-gray-100 rounded-full py-1.5 px-4 inline-block font-bold">
+                        <span class="text-gray-400 line-through text-[11px]">$15 USD</span>
+                        <span class="text-pink-600 text-[13px] ml-2 font-black">GRATIS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRECIO (REDISEÑO MÓVIL) -->
+    <section id="oferta" class="py-16 md:py-24 px-4 md:px-6 bg-white relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-[#4a153b] text-2xl md:text-4xl font-black uppercase mb-2">Comienza tu viaje hoy mismo</h2>
+                <p class="text-gray-500 font-bold italic text-sm">Acceso inmediato 24/7</p>
+            </div>
+
+            <div class="offer-gradient-box shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-pink-100">
+                <!-- Detalles -->
+                <div class="p-6 md:p-12 bg-white border-b lg:border-b-0 lg:border-r border-pink-50">
+                    <h4 class="font-black text-[#4a153b] text-lg uppercase mb-6 flex items-center gap-3">
+                        <span class="w-8 h-1 bg-pink-500"></span> RESUMEN
+                    </h4>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between items-start gap-4 text-xs md:text-sm">
+                            <span class="font-bold text-gray-700">Guía "Embarazo Sin Esperas"</span>
+                            <span class="text-gray-400 line-through font-bold">$68.00</span>
+                        </div>
+                        <div class="flex justify-between items-start gap-4 text-xs md:text-sm text-pink-600">
+                            <span class="font-bold">Bono: Recetario Fértil</span>
+                            <span class="font-black uppercase text-[10px]">Gratis</span>
+                        </div>
+                        <div class="flex justify-between items-start gap-4 text-xs md:text-sm text-pink-600">
+                            <span class="font-bold">Bono: Conexión en Pareja</span>
+                            <span class="font-black uppercase text-[10px]">Gratis</span>
+                        </div>
+                        <div class="flex justify-between items-start gap-4 text-xs md:text-sm text-pink-600 border-b border-pink-50 pb-4">
+                            <span class="font-bold">Bono: Comunidad VIP</span>
+                            <span class="font-black uppercase text-[10px]">Gratis</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2">
+                            <span class="font-black text-[#4a153b]">TOTAL:</span>
+                            <span class="text-gray-500 line-through font-black text-lg">$112.00 USD</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-2 pt-6">
+                        <div class="text-center">
+                            <i data-lucide="shield-check" class="mx-auto text-gray-400 w-5 h-5 mb-1"></i>
+                            <p class="text-[7px] font-bold text-gray-400 uppercase">Seguro</p>
+                        </div>
+                        <div class="text-center">
+                            <i data-lucide="zap" class="mx-auto text-gray-400 w-5 h-5 mb-1"></i>
+                            <p class="text-[7px] font-bold text-gray-400 uppercase">Instantáneo</p>
+                        </div>
+                        <div class="text-center">
+                            <i data-lucide="award" class="mx-auto text-gray-400 w-5 h-5 mb-1"></i>
+                            <p class="text-[7px] font-bold text-gray-400 uppercase">Calidad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="bg-[#8a2b6d] p-8 md:p-10 text-center text-white flex-1 flex flex-col justify-center items-center">
+                    <div class="price-badge-exclusive animate-bounce text-[10px] md:text-xs">OFERTA LIMITADA</div>
+                    <p class="text-white/80 font-bold uppercase text-[10px] tracking-widest mb-1">Inversión única:</p>
+                    
+                    <div class="flex items-start mb-6">
+                        <span class="text-2xl font-black mt-3 md:mt-4">$</span>
+                        <span class="price-huge text-[100px] md:text-[130px] font-black text-[#ccff00] leading-none tracking-tighter">12</span>
+                        <div class="text-left mt-5 md:mt-6 ml-1">
+                            <span class="block text-xl md:text-2xl font-black">.00</span>
+                            <span class="block text-[10px] font-bold text-white/60">USD</span>
+                        </div>
+                    </div>
+
+                    <a href="https://pay.hotmart.com/A104664724N?checkoutMode=10" target="_blank" class="btn-premium w-full py-5 md:py-7 rounded-xl md:rounded-2xl text-white font-black text-xl md:text-2xl uppercase tracking-tighter mb-6">
+                        ¡QUIERO MI ACCESO!
+                    </a>
+
+                    <div class="flex items-center justify-center gap-2 opacity-70 mb-2">
+                        <img src="https://img.icons8.com/color/48/000000/visa.png" class="h-3" alt="Visa">
+                        <img src="https://img.icons8.com/color/48/000000/mastercard.png" class="h-3" alt="Mastercard">
+                        <img src="https://img.icons8.com/color/48/000000/paypal.png" class="h-3" alt="Paypal">
+                    </div>
+                    <p class="text-[8px] font-bold text-white/40 uppercase tracking-widest">Protección SSL 256 bits</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTORIDAD -->
+    <section class="py-16 md:py-24 px-4 md:px-6 bg-gray-50 border-y border-gray-100">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
+            <div class="flex-shrink-0">
+                <div class="w-48 h-48 md:w-80 md:h-80 rounded-full border-[8px] border-white overflow-hidden shadow-xl relative">
+                    <img src="https://i.postimg.cc/KYhDSkBB/rzk_EUo_K0ltt_Tm_o_Mw_Sl_OP_(1)_min.png" alt="Valeria" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="flex-1 space-y-4 md:space-y-6 text-center md:text-left">
+                <div class="title-badge">CONOCE A TU GUÍA</div>
+                <h3 class="text-[#8a2b6d] text-xl md:text-3xl font-black uppercase">¿Quién te acompañará?</h3>
+                <p class="text-gray-900 font-extrabold text-lg md:text-2xl leading-tight">Hola, soy Valeria Sánchez.</p>
+                <p class="text-gray-600 text-sm md:text-lg italic font-medium leading-relaxed">
+                    Nutricionista especializada en salud reproductiva.
+                </p>
+                <p class="text-gray-600 text-sm md:text-base leading-relaxed px-2 md:px-0">
+                    He dedicado años a estudiar cómo el ambiente y la nutrición afectan la fertilidad. Mi método es <strong>biología aplicada con amor</strong>. He ayudado a cientos de mujeres a despertar su capacidad natural de concebir cuando ya habían perdido la esperanza.
+                </p>
+                <p class="cursive-font text-2xl md:text-3xl text-pink-500 pt-2">"Tú también puedes lograrlo."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GARANTÍA -->
+    <section class="bg-[#4a153b] py-16 px-4 md:px-6 border-y-4 border-[#ccff00]">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16 text-center md:text-left">
+            <div class="w-32 h-32 md:w-40 md:h-40 border-4 md:border-8 border-[#ccff00] rounded-full flex flex-col items-center justify-center p-2 flex-shrink-0 mx-auto">
+                <span class="text-4xl md:text-6xl font-black text-[#ccff00]">7</span>
+                <span class="text-white text-[8px] md:text-[10px] font-black uppercase">DÍAS GARANTÍA</span>
+            </div>
+            <div class="flex-1">
+                <h3 class="text-white text-xl md:text-3xl font-black uppercase mb-3 italic">SIN RIESGOS PARA TI</h3>
+                <p class="text-white/90 text-sm md:text-xl font-medium leading-relaxed">
+                    Explora el método completo por 7 días. Si no es lo que esperabas, te devolvemos el 100% de tu inversión. Estamos seguros de que cambiará tu vida.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 md:py-28 px-4 md:px-6 bg-pink-50/20">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="title-badge mb-4">CENTRO DE AYUDA</div>
+                <h3 class="text-[#4a153b] text-2xl md:text-5xl font-black uppercase mb-4 leading-tight">Preguntas Frecuentes</h3>
+            </div>
+            
+            <div class="space-y-3">
+                <!-- FAQ 1 -->
+                <details class="group faq-item">
+                    <summary class="faq-button list-none">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-4 h-4 text-pink-500"></i>
+                            <span>¿Cómo recibo el material?</span>
+                        </div>
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p>¡Instantáneo! Recibirás un correo de <strong>Hotmart</strong> con tus credenciales tras tu compra. Léelo en cualquier dispositivo.</p>
+                    </div>
+                </details>
+                <!-- FAQ 2 -->
+                <details class="group faq-item">
+                    <summary class="faq-button list-none">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="credit-card" class="w-4 h-4 text-pink-500"></i>
+                            <span>¿Es pago único?</span>
+                        </div>
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Sí. No hay suscripciones ni cargos extra. Pagas una vez y el material es tuyo para siempre.</p>
+                    </div>
+                </details>
+                <!-- FAQ 3 -->
+                <details class="group faq-item">
+                    <summary class="faq-button list-none">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-pink-500"></i>
+                            <span>¿Qué pasa si no me gusta?</span>
+                        </div>
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Tienes 7 días de garantía. Si no estás satisfecha, solicita el reembolso total sin preguntas.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÚLTIMO CTA -->
+    <section class="py-16 md:py-20 px-4 md:px-6 bg-white text-center">
+        <div class="max-w-4xl mx-auto space-y-6 md:space-y-8">
+            <h3 class="text-[#4a153b] text-xl md:text-3xl font-black uppercase px-2">¿Lista para dar el primer paso?</h3>
+            <p class="text-gray-600 text-sm md:text-lg max-w-2xl mx-auto px-4 leading-relaxed">No dejes que otro mes pase sin un plan claro. Únete hoy mismo.</p>
+            <div class="pt-4 px-4">
+                <a href="https://pay.hotmart.com/A104664724N?checkoutMode=10" target="_blank" class="btn-premium text-white px-8 py-5 rounded-full font-black text-lg md:text-2xl uppercase tracking-tighter shadow-2xl w-full max-w-sm">
+                    SÍ, ¡QUIERO EMPEZAR!
+                </a>
+                <p class="text-gray-400 mt-6 text-[10px] md:text-sm font-bold flex items-center justify-center gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4"></i>
+                    ACCESO POR TAN SOLO $12 USD
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 md:py-12 bg-[#4a153b] text-center text-white/40 text-[10px] px-6">
+        <p>© 2024 Embarazo Sin Esperas - Valeria Sánchez</p>
+        <p class="mt-2 text-white/20">Este producto no garantiza resultados específicos. Cada cuerpo es único.</p>
+    </footer>
+
+    <script>
+        // Inicializar Iconos Lucide
+        lucide.createIcons();
+
+        // 1. Contador de Urgencia
+        function startTimer(duration, display) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = hours + ":" + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let fiveHours = 60 * 60 * 5,
+                display = document.querySelector('#countdown');
+            startTimer(fiveHours, display);
+            
+            // Iniciar notificaciones de venta tras una pequeña demora
+            setTimeout(showNotification, 3000);
+        };
+
+        // 2. Notificaciones de Venta (Social Proof)
+        const buyers = [
+            { name: "Mariana R.", city: "CDMX", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" },
+            { name: "Elena G.", city: "Madrid", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" },
+            { name: "Lucía M.", city: "B. Aires", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100" },
+            { name: "Sofía P.", city: "Bogotá", img: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=100" },
+            { name: "Carla S.", city: "Santiago", img: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=100" }
+        ];
+
+        function showNotification() {
+            const notification = document.getElementById('sales-notification');
+            const userEl = document.getElementById('sale-user');
+            const imgEl = document.getElementById('sale-img');
+            
+            setInterval(() => {
+                const buyer = buyers[Math.floor(Math.random() * buyers.length)];
+                userEl.innerHTML = `${buyer.name} <span class="text-gray-400 font-normal">desde ${buyer.city}</span>`;
+                imgEl.src = buyer.img;
+                
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 4000);
+                
+            }, 15000);
+        }
+    </script>
+</body>
+</html>
